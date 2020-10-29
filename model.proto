@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option go_package = "github.com/ostapw/grpc-model/gen/go/model";
+option java_multiple_files = true;
+option java_package = "io.grpc.ostapw.echo";
+option java_outer_classname = "EchoProto";
+
+package echo;
+
+// The ECHO service definition.
+service Echo {
+  // Sends text to get back.
+  rpc Say (SayRequest) returns (SayResponse) {}
+}
+
+// The request message containing the text to get back.
+message SayRequest {
+  string message = 1;
+}
+
+// The response message containing the received message.
+message SayResponse {
+  string message = 1;
+}
